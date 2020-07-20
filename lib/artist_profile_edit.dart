@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:listenerlilly/reusable_container.dart';
+import 'button.dart';
 
 class ArtistProfileEdit extends StatefulWidget {
   @override
@@ -37,20 +38,15 @@ class _State extends State<ArtistProfileEdit> {
                   Navigator.pushNamed(context, '/artist_profile_view');
                 },
               ),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Colors.white,
-                child: Text(
-                  'Sign out',
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                onPressed: () {},
-              )
+              Button(
+                borderRadius: 15,
+                name: 'Sign Out',
+                fontSize: 12,
+                buttonColor: Colors.white,
+                whenPressed: () {
+                  Navigator.pushNamed(context, '/listener_profile_edit');
+                },
+              ),
             ],
           ),
           //artist thumbnail
@@ -61,14 +57,12 @@ class _State extends State<ArtistProfileEdit> {
                 //color: Colors.white,
                 child: Align(
                   alignment: FractionalOffset.topRight,
-                  child: FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Change',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
+                  child: Button(
+                    //borderRadius: 15,
+                    name: 'Change',
+                    fontSize: 12,
+                    buttonColor: Colors.white,
+                    whenPressed: () {},
                   ),
                 ),
                 width: 200, //queryData.size.width / 3,
@@ -118,40 +112,24 @@ class _State extends State<ArtistProfileEdit> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Color(0xFF00FEF0),
-                child: Text(
-                  'Upload Album',
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-                onPressed: () {
+              Button(
+                borderRadius: 15,
+                name: 'Upload Album',
+                fontSize: 15,
+                buttonColor: Color(0xFF00FEF0),
+                whenPressed: () {
                   Navigator.pushNamed(context, '/upload_album');
                 },
               ),
-              RaisedButton(
-                //padding: EdgeInsets.only(right: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Color(0xFF29A437),
-                child: Text(
-                  'Upload Single',
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-                onPressed: () {
-                  print('upload single pressed');
+              Button(
+                borderRadius: 15,
+                name: 'Upload Single',
+                fontSize: 15,
+                buttonColor: Color(0xFF29A437),
+                whenPressed: () {
                   Navigator.pushNamed(context, '/upload_single');
                 },
-              )
+              ),
             ],
           ),
           //albums text
