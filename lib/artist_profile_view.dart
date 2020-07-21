@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:listenerlilly/reusable_container.dart';
+import 'button.dart';
 
 class ArtistProfileView extends StatefulWidget {
   @override
@@ -64,39 +65,24 @@ class _State extends State<ArtistProfileView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Color(0xFF00FEF0),
-                child: Text(
-                  'Subscribe',
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-                onPressed: () {},
+              Button(
+                borderRadius: 15,
+                name: 'Subscribe',
+                fontSize: 15,
+                buttonColor: Color(0xFF00FEF0),
+                whenPressed: () {},
               ),
               Container(
                 padding: EdgeInsets.only(right: 150),
                 child: Text('1k'),
               ),
-              RaisedButton(
-                //padding: EdgeInsets.only(right: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Color(0xFF29A437),
-                child: Text(
-                  'Donate',
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-                onPressed: () {},
-              )
+              Button(
+                borderRadius: 15,
+                name: 'Donate',
+                fontSize: 15,
+                buttonColor: Color(0xFF29A437),
+                whenPressed: () {},
+              ),
             ],
           ),
           //albums text

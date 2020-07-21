@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:listenerlilly/reusable_container.dart';
 import 'button.dart';
 
 class ListenerProfile extends StatefulWidget {
@@ -47,20 +48,14 @@ class _State extends State<ListenerProfile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  width: 200, //queryData.size.width / 3,
+                ReusableContainer(
+                  name: '',
                   height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      image: AssetImage('images/Alien.jpg'),
-                      // fit: BoxFit.cover,
-                    ),
-                  ),
+                  containerWidth: 200,
+                  imageAddress: 'images/Mellow.png',
                 ),
               ],
             ),
-
             //Listener name
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

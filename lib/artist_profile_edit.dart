@@ -58,7 +58,7 @@ class _State extends State<ArtistProfileEdit> {
                 child: Align(
                   alignment: FractionalOffset.topRight,
                   child: Button(
-                    //borderRadius: 15,
+                    borderRadius: 0,
                     name: 'Change',
                     fontSize: 12,
                     buttonColor: Colors.white,

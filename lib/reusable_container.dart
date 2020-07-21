@@ -8,12 +8,16 @@ class ReusableContainer extends StatelessWidget {
           this.imageAddress,
       this.containerWidth,
       this.name,
-      this.onTap});
+      this.onTap,
+      this.height = 100,
+      this.borderRadius = 20});
 
   // final Color colour;
   //final Widget cardChild;
   //final Function onPress;
   final double containerWidth;
+  final double borderRadius;
+  final double height;
   final String imageAddress;
   final String name;
   final Function onTap;
@@ -33,9 +37,9 @@ class ReusableContainer extends StatelessWidget {
         ),
         // margin: EdgeInsets.all(15.0),
         width: containerWidth,
-        height: 100,
+        height: height,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(borderRadius),
           image: DecorationImage(
             image: AssetImage(imageAddress),
             fit: BoxFit.cover,

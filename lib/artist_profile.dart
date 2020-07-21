@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:listenerlilly/reusable_container.dart';
+import 'button.dart';
 
 class ArtistProfile extends StatefulWidget {
   @override
@@ -19,36 +20,24 @@ class _State extends State<ArtistProfile> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Colors.white,
-                child: Text(
-                  'Edit Profile',
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                onPressed: () {
+              Button(
+                borderRadius: 15,
+                name: 'Edit Profile',
+                fontSize: 12,
+                buttonColor: Colors.white,
+                whenPressed: () {
                   Navigator.pushNamed(context, '/artist_profile_edit');
                 },
               ),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Colors.white,
-                child: Text(
-                  'Sign out',
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                onPressed: () {},
-              )
+              Button(
+                borderRadius: 15,
+                name: 'Sign Out',
+                fontSize: 12,
+                buttonColor: Colors.white,
+                whenPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+              ),
             ],
           ),
           //artist thumbnail

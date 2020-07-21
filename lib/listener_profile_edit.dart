@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'button.dart';
 
 class ListenerProfileEdit extends StatefulWidget {
   @override
@@ -35,20 +36,15 @@ class _State extends State<ListenerProfileEdit> {
                   Navigator.pushNamed(context, '/artist_profile');
                 },
               ),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                textColor: Colors.black,
-                color: Colors.white,
-                child: Text(
-                  'Sign out',
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                onPressed: () {},
-              )
+              Button(
+                borderRadius: 15,
+                name: 'Sign Out',
+                fontSize: 12,
+                buttonColor: Colors.white,
+                whenPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+              ),
             ],
           ),
           //artist thumbnail
@@ -59,14 +55,11 @@ class _State extends State<ListenerProfileEdit> {
                 //color: Colors.white,
                 child: Align(
                   alignment: FractionalOffset.topRight,
-                  child: FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Change',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
+                  child: Button(
+                    name: 'Change',
+                    borderRadius: 5,
+                    buttonColor: Colors.white,
+                    whenPressed: () {},
                   ),
                 ),
                 width: 200, //queryData.size.width / 3,

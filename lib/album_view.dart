@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:listenerlilly/reusable_container.dart';
 
 class AlbumView extends StatefulWidget {
   @override
@@ -49,19 +49,13 @@ class _AlbumViewState extends State<AlbumView> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: <Widget>[
-                                        Container(
+                                        ReusableContainer(
                                           // margin: EdgeInsets.all(15.0),
-                                          width: queryData.size.width / 1.3,
+                                          containerWidth:
+                                              queryData.size.width / 1.3,
                                           height: 300,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  'images/Cogan.jpg'),
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
+                                          imageAddress: 'images/Cogan.jpg',
+                                          name: '',
                                         ),
                                       ],
                                     ),
@@ -89,16 +83,12 @@ class _AlbumViewState extends State<AlbumView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Container(
-                                  width: 50,
+                                ReusableContainer(
+                                  containerWidth: 50,
                                   height: 50,
-                                  decoration: BoxDecoration(
-                                    // borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                      image: AssetImage('images/Cogan.jpg'),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                  imageAddress: 'images/Cogan.jpg',
+                                  name: '',
+                                  borderRadius: 0,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
@@ -146,9 +136,7 @@ class _AlbumViewState extends State<AlbumView> {
                               ],
                             ),
                           ),
-                          SizedBox(
-                            height: 15,
-                          ),
+                          SizedBox(height: 15),
                           Container(
                             width: double.infinity,
                             height: 50,
@@ -156,16 +144,12 @@ class _AlbumViewState extends State<AlbumView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Container(
-                                  width: 50,
+                                ReusableContainer(
+                                  containerWidth: 50,
                                   height: 50,
-                                  decoration: BoxDecoration(
-                                    // borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                      image: AssetImage('images/Cogan.jpg'),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                  imageAddress: 'images/Cogan.jpg',
+                                  name: '',
+                                  borderRadius: 0,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
@@ -193,8 +177,6 @@ class _AlbumViewState extends State<AlbumView> {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        Navigator.pushNamed(
-                                            context, '/song_view');
                                         print('tapped');
                                       },
                                       child: ClipOval(
